@@ -1,6 +1,6 @@
 # Entity Framework Core, Stored  Procedure Data Access
 Consume data using Stored Procedure
 
-# Uses generic data access
+# Uses Generic Data Access Pattern
 
 # Clean Architecture Design Pattern
