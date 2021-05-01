@@ -8,6 +8,13 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="6.0.0-preview.3.21201.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.0-preview.3.21201.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SPDataRepository.Data\SPDataRepository.Data.csproj" />
+    <ProjectReference Include="..\SPDataRepository.Domain.Logic\SPDataRepository.Domain.Logic.csproj" />
+    <ProjectReference Include="..\SPDataRepository.Domain\SPDataRepository.Domain.csproj" />
   </ItemGroup>
 
 </Project>

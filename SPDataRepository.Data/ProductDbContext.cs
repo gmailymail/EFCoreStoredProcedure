@@ -32,11 +32,14 @@ namespace SPDataRepository.Data
         public async Task<IEnumerable<T>> GetTsFromSpAsync<T>(string StoredProcedure, string Schema = "", SqlParameter[] parameters=null,
             CancellationToken token=default) where T : class
         {
+            if (parameters is null)
+                parameters = new SqlParameter[0];
+
             string spName = BuildSpName(StoredProcedure, Schema,parameters);
 
             var resultSet = await Set<T>()
                 .FromSqlRaw($"{spName}", parameters)
-                .ToListAsync();
+                .ToListAsync(token);
 
             return resultSet;
         }
@@ -44,7 +47,7 @@ namespace SPDataRepository.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //This must be set in order to treat ProductDto as a non table
-            modelBuilder.Entity<ProductDto>().HasNoKey();
+            modelBuilder.Entity<ProductDto>().HasNoKey().ToView(null);
         }
 
         #region Helper Methods
@@ -60,14 +63,14 @@ namespace SPDataRepository.Data
         {
             //Unicode for Space
             var spaceChar = "\u0020";
-            string spName = $"EXECUTE";
+            string spName = $"EXECUTE{spaceChar}";
 
             if (!string.IsNullOrWhiteSpace(Schema))
                 spName += $"{spaceChar}{Schema}.";
 
             spName += $"{StoredProcedure}";
 
-            if (parameters is not null)
+            if (parameters.Length>0)
             {
                 foreach (var param in parameters)
                     //Add spcae front and after along with Parameter name
