@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>preview</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SPDataRepository.Data\SPDataRepository.Data.csproj" />
+    <ProjectReference Include="..\SPDataRepository.Domain\SPDataRepository.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
