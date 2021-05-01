@@ -13,6 +13,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPDataRepository.Data", "SP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPDataRepository.Domain.Dtos", "SPDataRepository.Domain.Dtos\SPDataRepository.Domain.Dtos.csproj", "{51683D8B-FAAA-4589-A4CA-7A09FB50A838}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{C3746C0E-D0B4-4108-B488-F8ADE3028DB7}"
+	ProjectSection(SolutionItems) = preProject
+		GetProducts Stored Procedure.sql = GetProducts Stored Procedure.sql
+		GetProductsByBrandId Stored Procedure.sql = GetProductsByBrandId Stored Procedure.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

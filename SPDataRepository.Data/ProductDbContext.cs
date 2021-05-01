@@ -48,6 +48,7 @@ namespace SPDataRepository.Data
         {
             //This must be set in order to treat ProductDto as a non table
             modelBuilder.Entity<ProductDto>().HasNoKey().ToView(null);
+
         }
 
         #region Helper Methods
